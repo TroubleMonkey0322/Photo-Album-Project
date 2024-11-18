@@ -125,7 +125,7 @@ function checkAnswer(selectedAnswer) {
         score++;
     }
 
-    // currentQuestion++; - Should this be an eventListener for clicking the next button insteaqd of just going to the next question upon a correct answer?
+    currentQuestion++; 
 
     if(selectedAnswer !== question.correctAnswer) {
         alert("Incorrect, please try again.")
