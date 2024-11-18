@@ -1,6 +1,7 @@
 body {
     background: #333;
     color: white;
+    text-align: center;
 }
 
 form {
@@ -18,4 +19,12 @@ input[type="submit"] {
 
 .incorrect {
     background: red;
+}
+
+.header {
+  background: black;
+  font-size: 3.0em;
+  padding: 50px;
+  text-align: center;
+  border-radius: 35px;
 }
