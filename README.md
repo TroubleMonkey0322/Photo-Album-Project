@@ -1,8 +1,8 @@
 # Project 1 - Quiz
 
 *As a 7th grade math student
-I WANT to be able to study what I have learned in class
-SO THAT I can show and use my new knowledge to continue doing well in school
+I WANT to be able to study what I have learned to this point
+SO THAT I can show and use my new knowledge to further my educational goals
 
 ## Acceptance Criteria
 
