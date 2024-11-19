@@ -1,4 +1,4 @@
-# Project 1 - Quiz
+# 7th Grade Math Quiz
 
 *As a 7th grade math student
 I WANT to be able to study what I have learned to this point
