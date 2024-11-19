@@ -1,3 +1,5 @@
+const startButton = document.getElementById('start')
+startButton.addEventListener('click', startTest)
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
