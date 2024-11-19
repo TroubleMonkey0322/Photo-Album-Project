@@ -1,19 +1,7 @@
-const startButton = document.getElementById('start')
-startButton.addEventListener('click', startTest)
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
-  }
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+const startButton = document.querySelector('.btn-start')
+
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn");
 
 
 const questions = [
@@ -122,20 +110,7 @@ correctAnswer: "a"
 let currentQuestion = 0;
 let score = 0;
 
-function displayQuestion() {
-    const questionElement = document.getElementById("question");
-    const answerElements = document.guerySelectorAll(".answer");
 
-    const question = questions[currentWQuestion];
-
-    questionElement.textContent = question.question;
-
-    for (const key in question.answers) {
-        const answer = question.answers[key];
-        const answerElement = document.getElementById(key);
-        answerElement.textContent = answer;
-    }
-}
 function checkAnswer(selectedAnswer) {
     const question = questions[currentQuestion];
 
@@ -147,31 +122,27 @@ function checkAnswer(selectedAnswer) {
     }
 }
 
-    currentQuestion++; 
 
-    if(selectedAnswer !== question.correctAnswer) {
-        alert("Incorrect, please try again.");
-
-    // Do we need an else statement here?
-    // On alert, goes back to current question to try again.
-    }
-
-    if (currentQuestion < question.length) {
-        displayQuestion();
-    } else {
-        showResults();
-    }
-
-
-
-    const submitButton = document.querySelector('button[type="submit"]');
-    submitButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        const formData = new formData(event.target.form);
-    });
+const submitButton = document.querySelector('form input[type="submit"]');
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const formData = new formData(event.target.form);
+    console.log(formData);
+});
 
 
 function displayScore() {
     alert('Your score: ${score} out of ${questions.length}');
 }
-displayQuestion();
+
+startButton.addEventListener('click', submitButton);
+
+const myModal = new bootstrap.Modal('#myModal', {
+    background: true
+});
+
+myModal.show('myModal');
+
+btn.addEventListener('click', function() {
+    myModal.hide('myModal');
+});
