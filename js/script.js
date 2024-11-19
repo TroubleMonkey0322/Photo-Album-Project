@@ -168,6 +168,7 @@ function checkAnswer(selectedAnswer) {
     submitButton.addEventListener('click', (event) => {
         event.preventDefault();
         const formData = new formData(event.target.form);
+        console.log(formData);
     });
 
 
