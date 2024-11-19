@@ -128,7 +128,7 @@ function checkAnswer(selectedAnswer) {
     currentQuestion++; 
 
     if(selectedAnswer !== question.correctAnswer) {
-        alert("Incorrect, please try again.")
+        alert("Incorrect, please try again.");
 
     // Do we need an else statement here?
     // On alert, goes back to current question to try again.
@@ -142,11 +142,11 @@ function checkAnswer(selectedAnswer) {
 }
 
 function showResults() {
-    const quizContainer = document.getElementById("quiz-container");
-    quizContainer.innerHTML - `
-    <h2>You scored ${score} out of ${questions.length}!</h2>
-    <button onclick="location.reload()" Try Again</button>
-    `;
+    const submitButton = document.querySelector('button[type="submit"]');
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const formData = new formData(event.target.form);
+    });
 }
 
 displayQuestion();
