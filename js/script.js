@@ -1,3 +1,19 @@
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
 const questions = [
     {
         question: "1. If 4 apples cost $2, how much would 10 apples cost at the same rate?",
@@ -123,7 +139,11 @@ function checkAnswer(selectedAnswer) {
 
     if (selectedAnswer === question.correctAnswer) {
         score++;
+        alert("Correct!");
+    } else {
+        alert("Incorrect");
     }
+}
 
     currentQuestion++; 
 
@@ -139,14 +159,17 @@ function checkAnswer(selectedAnswer) {
     } else {
         showResults();
     }
-}
 
-function showResults() {
+
+
     const submitButton = document.querySelector('button[type="submit"]');
     submitButton.addEventListener('click', (event) => {
         event.preventDefault();
         const formData = new formData(event.target.form);
     });
-}
 
+
+function displayScore() {
+    alert('Your score: ${score} out of ${questions.length}');
+}
 displayQuestion();
